@@ -1,0 +1,22 @@
+import requests
+import config
+
+def delete_content(content_ids):
+    url = "https://api.gofile.io/deleteContent"
+
+    headers = {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Token": config.GOFILE_API_KEY
+    }
+
+    data = {
+        "contentsId": content_ids
+    }
+
+    response = requests.delete(url, headers=headers, data=data)
+    response_json = response.json()
+
+    if response_json['status'] == 'ok':
+        return True
+    else:
+        return False
