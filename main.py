@@ -1,7 +1,7 @@
 from telegram.ext import Updater, CommandHandler
 import config
 import requests
-
+import telegram
 # Define Telegram bot token
 bot = telegram.Bot(token=config.TELEGRAM_BOT_TOKEN)
 
